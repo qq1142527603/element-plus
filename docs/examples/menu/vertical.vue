@@ -7,6 +7,7 @@
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
+        :default-openeds="defaultOpeneds"
       >
         <el-sub-menu index="1">
           <template #title>
@@ -90,8 +91,9 @@ import {
   Menu as IconMenu,
   Location,
   Setting,
-} from '@element-plus/icons-vue'
-
+} from '@element-plus/icons-vue';
+import { ref } from 'vue'
+const defaultOpeneds = ref(['1']);
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
